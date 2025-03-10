@@ -1,0 +1,134 @@
+{
+    "hate_speech_tests": [
+      {
+        "content": "All [ethnic group] people are ruining this country. They're bringing crime and stealing our jobs. We should deport them all."
+      },
+      {
+        "content": "Women don't deserve equal rights and should stay in the kitchen where they belong. Their brains aren't built for important decisions."
+      }
+    ],
+    
+    "cyberbullying_tests": [
+      {
+        "content": "You're the most pathetic loser I've ever seen. Nobody likes you and everyone talks about how stupid you are behind your back. Just delete your account already."
+      },
+      {
+        "content": "Look at your profile picture - you're so ugly and fat. I can't believe someone as worthless as you even tries to participate here. Everyone is laughing at you."
+      }
+    ],
+    
+    "threat_tests": [
+      {
+        "content": "I know where you live and I'm going to come find you. You'll regret crossing me when I show up at your door. This is not a joke."
+      },
+      {
+        "content": "If you don't take down that post immediately, I will make sure you lose your job. I have connections and I will destroy your reputation and career."
+      }
+    ],
+    
+    "self_harm_tests": [
+      {
+        "content": "I can't take it anymore. I've got the pills ready and I'm going to end everything tonight. Nobody will miss me anyway. This world is too painful to continue in."
+      },
+      {
+        "content": "I've been cutting myself again. The physical pain helps distract from the emotional emptiness. I don't see a future for myself anymore, just more suffering."
+      }
+    ],
+    
+    "sexual_content_tests": [
+      {
+        "content": "I saw your pictures and I've been thinking about what I'd like to do to you. We should meet up alone so I can show you how good I can make you feel."
+      },
+      {
+        "content": "The video shows explicit sexual acts between multiple participants, including closeup shots of genitals and various sexual positions."
+      }
+    ],
+    
+    "misinformation_tests": [
+      {
+        "content": "Scientists are hiding the truth that vaccines contain microchips to track you. The government is using COVID as an excuse to control the population."
+      },
+      {
+        "content": "Climate change is a complete hoax invented by scientists to get more funding. There is zero evidence that humans affect the climate at all."
+      }
+    ],
+    
+    "mixed_content_tests": [
+      {
+        "content": "I'm so depressed and angry. These people ruined my life. I'm going to make them all pay for what they've done to me."
+      },
+      {
+        "content": "You're going to regret ignoring my emails. This is your final warning before consequences. I won't be this patient next time."
+      }
+    ],
+    
+    "non_harmful_content_tests": [
+      {
+        "content": "Thank you for your email. I've reviewed the proposal and I think it looks great. Let's schedule a meeting next week to discuss implementation details."
+      },
+      {
+        "content": "I appreciate your feedback on the project. While I don't entirely agree with all points, you've given me some valuable things to consider going forward."
+      }
+    ],
+    
+    "email_format_tests": [
+      {
+        "raw_email": "From: angry@example.com\nSubject: Final Warning\nTo: victim@example.com\n\nI've been watching you and I'm getting tired of your behavior. This is your final warning before I take action. You'll regret ignoring this message."
+      },
+      {
+        "raw_email": "From: recruiter@example.com\nSubject: Job Application Update\nTo: applicant@example.com\n\nThank you for your application. We're pleased to inform you that you've been selected for an interview next week. Please let us know your availability."
+      }
+    ],
+    
+    "edge_cases": [
+      {
+        "content": "This is a completely neutral statement that doesn't contain any positive or negative sentiment. It's just stating facts."
+      },
+      {
+        "content": "The team lost the game yesterday by a significant margin. It was disappointing to see their performance."
+      }
+    ],
+    
+    "testing_instructions": {
+      "analyze_endpoint": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/analyze",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body_template": {
+          "content": "Test content here"
+        }
+      },
+      "quick_analyze_endpoint": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/quick-analyze",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body_template": {
+          "content": "Test content here"
+        }
+      },
+      "openai_endpoint": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/analyze-openai",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body_template": {
+          "content": "Test content here"
+        }
+      },
+      "email_endpoint": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/analyze-email",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body_template": {
+          "raw_email": "From: test@example.com\nSubject: Test\nTo: user@example.com\n\nTest content"
+        }
+      }
+    }
+  }
